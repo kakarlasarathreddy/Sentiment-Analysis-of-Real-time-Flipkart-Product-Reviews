@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis On Yonex Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center; /* Center-align the content */
+            background-color: #0f0303; /* Set background color */
+        }
+
+        h1 {
+            color: #2bcc8c; /* Change heading color to blue */
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+            margin: 20px auto; /* Center the textarea */
+            display: block;
+            border-radius: 5px; /* Add border radius */
+            border: 2px solid #db2bc0; /* Add border with blue color */
+            padding: 10px; /* Add padding */
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px; /* Add border radius */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darken button color on hover */
+        }
+
+        .result {
+            margin-top: 20px; /* Add margin to the result section */
+        }
+
+        .result h1 {
+            color: #007bff; /* Change result heading color to blue */
+        }
+
+        .result p {
+            color: #333; /* Change result text color to dark gray */
+        }
+    </style>
+</head>
+<body>
+    <h1>Sentiment Analysis On Yonex Reviews</h1>
+    <form action="/predict" method="post">
+        <textarea name="text" placeholder="Enter text..."></textarea>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h1>Result</h1>
+        <p>{{ prediction }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
+
