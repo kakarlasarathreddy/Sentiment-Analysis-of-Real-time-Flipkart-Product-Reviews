@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis On Yonex Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center; /* Center-align the content */
+            background-color: #15ecd3; /* Set background color */
+        }
+
+        h1 {
+            color: #000000; /* Change heading color to blue */
+        }
+        body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-image: url("https://assets-global.website-files.com/5e42772e6a8cfd42a9715206/63b4175cd81a3741255a1ca8_Feature_Chatbot-Sentiment-Analysis%20(1).jpg")
+background-size: cover;
+background-position: center;
+height: 100vh;
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+            margin: 20px auto; /* Center the textarea */
+            display: block;
+            border-radius: 5px; /* Add border radius */
+            border: 2px solid #db2bc0; /* Add border with blue color */
+            padding: 10px; /* Add padding */
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px; /* Add border radius */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darken button color on hover */
+        }
+
+        .result {
+            margin-top: 20px; /* Add margin to the result section */
+        }
+
+        .result h1 {
+            color: #000000; /* Change result heading color to blue */
+        }
+
+        .result p {
+            color: #000000; /* Change result text color to dark gray */
+        }
+    </style>
+</head>
+<body>
+    <h1>Sentiment Analysis On Yonex Reviews</h1>
+    <form action="/predict" method="post">
+        <textarea name="text" placeholder="Enter text..."></textarea>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h1>Result</h1>
+        <p>{{ prediction }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
+
